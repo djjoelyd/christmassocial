@@ -109,7 +109,6 @@ module.exports = function(grunt) {
 
             images: {
                 files: ['dist/images/{,*/}*.{png,jpg,gif,svg}'],
-                tasks: ['copy:images'],
                 options: {
                     livereload: true
                 }
@@ -136,6 +135,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-browser-sync');
 
     // Run tasks
-    grunt.registerTask('default', ['browserSync', 'sass', 'concat', 'uglify', 'jshint', 'copy', 'watch', ]);
+    grunt.registerTask('default', ['sass', 'concat', 'uglify', 'jshint', 'copy', 'browserSync', 'watch', ]);
 
 };
