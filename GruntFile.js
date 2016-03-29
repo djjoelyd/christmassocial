@@ -116,7 +116,6 @@ module.exports = function(grunt) {
 
             js: {
                 files: ['dist/js/**/*.js'],
-                tasks: ['js'],
                 options: {
                     livereload: true
                 }
