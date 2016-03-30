@@ -258,6 +258,9 @@
 
 	p {
 		margin: 0 0 _size(element-margin) 0;
+		span {
+			color:$purple;
+		}
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -374,6 +377,20 @@
 		text-align: right;
 	}
 
+	.google-maps {
+        position: relative;
+        padding-bottom: 50%; // This is the aspect ratio
+        height: 0;
+        overflow: hidden;
+    }
+    .google-maps iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
 /* Section/Article */
 
 	section, article {
@@ -403,13 +420,16 @@
 		}
 
 		&.major {
-			margin: 0 0 (_size(element-margin) * 1.75) 0;
+			margin: 0;
 
 			h2, h3, h4, h5, h6 {
-				border-bottom: solid 2px _palette(border);
 				display: inline-block;
 				padding-bottom: 1em;
 				position: relative;
+				font-family:$font2;
+				text-transform:inherit;
+				font-weight:normal;
+				letter-spacing: 0;
 
 				&:after {
 					content: '';
@@ -417,10 +437,23 @@
 					height: 1px;
 				}
 			}
+			h2 {
+				font-size:42px;
+				margin-bottom:0;
+			}
+
+			h3 {
+				font-size:36px;
+				margin-bottom:0;
+			}
 
 			p {
 				color: _palette(fg);
 				top: 0;
+				letter-spacing: 0;
+				span {
+					color:$purple;
+				}
 			}
 
 			@include breakpoint(small) {
@@ -630,41 +663,65 @@
 		position: relative;
 
 		> .label {
-			display: none;
+			display: block;
+			font-size: 11px !important;
+			width: auto !important;
+			height: auto;
+			white-space: normal;
+			margin: 140px auto 0 !important;
+			font-weight: normal;
+			line-height: 15px;
 		}
 
 		&.major {
-			@include vendor('transform', 'rotate(-45deg)');
-			border-radius: 3px;
-			border: solid 2px _palette(border);
 			display: inline-block;
 			font-size: 1.35em;
-			height: calc(3em + 2px);
 			line-height: 3em;
 			text-align: center;
-			width: calc(3em + 2px);
-
-			&:before {
-				@include vendor('transform', 'rotate(45deg)');
-				display: inline-block;
-				font-size: 1.5em;
-			}
+			background:url('../images/circle.jpg');
+			background-size:cover;
+			width:134px;
+			height:125px;
 
 			@include breakpoint(small) {
 				font-size: 1em;
 			}
 		}
 
+		&:after {
+			content: "";
+			width: 70px;
+			height: 70px;
+			display: block;
+			margin: 0 auto;
+			top:28px;
+			left:33px;
+			position: absolute;
+		}
+
 		&.style1 {
-			color: _palette(accent2, bg);
+			&:after {
+				background: url("../images/icon1.png");
+				background-size: cover;
+			}
 		}
-
 		&.style2 {
-			color: _palette(accent3, bg);
+			&:after {
+				background: url("../images/icon2.png");
+				background-size: cover;
+			}
 		}
-
 		&.style3 {
-			color: _palette(accent4, bg);
+			&:after {
+				background: url("../images/icon3.png");
+				background-size: cover;
+			}
+		}
+		&.style4 {
+			&:after {
+				background: url("../images/icon4.png");
+				background-size: cover;
+			}
 		}
 	}
 
@@ -712,6 +769,22 @@
 			}
 		}
 	}
+	.introimg {
+		width:100%;
+		border:3px solid #fff;
+	}
+	.kerb {
+		width:100%;
+		max-width: 150px;
+		display:inline-block;
+		vertical-align: middle;
+	}
+	.mainlogo {
+		width:100%;
+		max-width: 200px;
+		display:inline-block;
+		vertical-align: middle;
+	}
 
 /* List */
 
@@ -757,6 +830,7 @@
 			li {
 				display: inline-block;
 				padding: 0 1em 0 0;
+				vertical-align: top;
 
 				&:last-child {
 					padding-right: 0 !important;
@@ -1421,7 +1495,7 @@
 		}
 
 		&.style5 {
-			@include wrapper(accent7);
+			//@include wrapper(accent7);
 		}
 
 		@include breakpoint(medium) {
@@ -1551,15 +1625,14 @@
 
 		h1 {
 			@include vendor('transition', 'opacity #{_duration(transitions)} ease');
-			height: inherit;
 			left: 1.25em;
 			line-height: inherit;
 			position: absolute;
-			top: 0;
+			top: -2px;
 			background:url('../images/logo.svg');
 			background-size:cover;
-			width:58px;
-			height:46px;
+			width: 80px;
+			height: 60px;
 			text-indent:-9999px;
 			padding:0;
 			margin:0;
@@ -1668,7 +1741,6 @@
 		h2 {
 			@include vendor('transform', 'scale(1)');
 			@include vendor('transition', ('transform 0.5s ease', 'opacity 0.5s ease'));
-			display: inline-block;
 			font-size: 1.75em;
 			opacity: 1;
 			padding: 0;
@@ -1678,16 +1750,17 @@
 			background-size:cover;
 			width:400px;
 			height:300px;
-			margin:0;
+			margin:0 auto;
 			text-indent:-9999px;
+			display:block;
 		}
 
 		h3 {
 			margin-top: 40px;
 			font-family:$font2;
 			font-size:50px;
-			display: block;
-			width: 50%;
+			display: inline-block;
+			width: auto;
 			margin: 0 auto;
 			padding:40px 0 0;
 			text-transform:capitalize;
@@ -1697,7 +1770,7 @@
 				content:"";
 				display:block;
 				border-top:1px solid #fff;
-				width:90%;
+				width:100%;
 				margin:-25px auto 25px;
 			}
 		}
@@ -1855,17 +1928,24 @@
 
 	#main {
 		> header {
-			@include padding(12em, 0);
-			@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../images/banner.jpg")'));
-			background-attachment: fixed;
-			background-position: center center;
-			background-repeat: no-repeat;
-			background-size: cover;
+			@include padding(4em, 0);
+			// @include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../images/banner.jpg")'));
+			// background-attachment: fixed;
+			// background-position: center center;
+			// background-repeat: no-repeat;
+			// background-size: cover;
 			text-align: center;
 
 			h2 {
-				font-size: 1.75em;
-				margin: 0 0 (_size(element-margin) * 0.25) 0;
+				font-size: 4em;
+				font-family:$font2;
+				text-transform:inherit;
+				letter-spacing: 0;
+				margin: 0;
+				display:inline-block;
+				vertical-align: middle;
+				line-height: 1em;
+				padding:0 30px;
 			}
 
 			p {
@@ -1879,26 +1959,26 @@
 				}
 			}
 
-			@include breakpoint(xlarge) {
-				@include padding(10em, 0);
-			}
+			// @include breakpoint(xlarge) {
+			// 	@include padding(10em, 0);
+			// }
 
-			@include breakpoint(large) {
-				@include padding(8em, 3em);
-			}
+			// @include breakpoint(large) {
+			// 	@include padding(8em, 3em);
+			// }
 
-			@include breakpoint(medium) {
-				@include padding(10em, 3em);
-			}
+			// @include breakpoint(medium) {
+			// 	@include padding(10em, 3em);
+			// }
 
-			@include breakpoint(small) {
-				@include padding(5em, 3em);
+			// @include breakpoint(small) {
+			// 	@include padding(5em, 3em);
 
-				h2 {
-					font-size: 1.25em;
-					margin: 0 0 (_size(element-margin) * 0.5) 0;
-				}
-			}
+			// 	h2 {
+			// 		font-size: 1.25em;
+			// 		margin: 0 0 (_size(element-margin) * 0.5) 0;
+			// 	}
+			// }
 		}
 	}
 
@@ -1925,6 +2005,10 @@
 
 				&:hover {
 					color: _palette(fg);
+					text-decoration: none;
+				}
+				.label {
+					margin:20px 0 !important;
 				}
 			}
 		}
