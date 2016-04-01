@@ -29,6 +29,7 @@ module.exports = function(grunt) {
                     cwd: 'dev',
                     src: [
                         '**/*.html',
+                        '**/*.php',
                         'images/{,*/}*.{png,jpg,gif,svg}',
                         'js/libs/*.js',
                         'fonts/{,*/}*.{eot,svg,ttf,woff,woff2,otf}'

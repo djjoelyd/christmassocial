@@ -723,6 +723,36 @@
 				background-size: cover;
 			}
 		}
+		&.style5 {
+			&:after {
+				background: url("../images/icon5.png");
+				background-size: cover;
+			}
+		}
+		&.style6 {
+			&:after {
+				background: url("../images/icon6.png");
+				background-size: cover;
+			}
+		}
+		&.style7 {
+			&:after {
+				background: url("../images/icon7.png");
+				background-size: cover;
+			}
+		}
+		&.style8 {
+			&:after {
+				background: url("../images/icon8.png");
+				background-size: cover;
+			}
+		}
+		&.style9 {
+			&:after {
+				background: url("../images/icon9.png");
+				background-size: cover;
+			}
+		}
 	}
 
 /* Image */
@@ -2081,3 +2111,125 @@
 			}
 		}
 	}
+
+/* Food */
+
+.traders {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	font-size:0;
+	.trader {
+		display:inline-block;
+		padding:0 10px;
+		letter-spacing: 0;
+		width:20%;
+		vertical-align: top;
+		img  {
+			width:100%;
+		}
+		h3 {
+			text-transform:uppercase;
+			font-weight:800;
+			text-align:center;
+			font-size:20px;
+			margin:0;
+			padding:0;
+			letter-spacing: 0;
+		}
+		p {
+			text-align:left;
+			font-size:12px;
+		}
+	}
+}
+.vendors_outer {
+	padding:10px;
+	background:white;
+	margin-top:20px;
+	.vendors {
+		background:white;
+		color:$purple;
+		text-transform:uppercase;
+		padding:20px;
+		text-align:center;
+		border:2px dotted $purple;
+		a {
+			font-weight:800;
+			text-transform:lowercase;
+		}
+	}
+}
+.drinks_outer {
+	padding:10px;
+	background:$purple;
+	margin-top:40px;
+	.drinks {
+		background:$purple;
+		color:white;
+		text-transform:uppercase;
+		padding:20px;
+		text-align:center;
+		border:2px dotted white;
+		img {
+			display:block;
+			margin:0 auto 10px;
+			width:50px;
+		}
+		h4 {
+			text-transform:initial !important;
+			font-size:24px;
+			font-weight:normal;
+			letter-spacing: 0;
+		}
+		p {
+			font-size:14px;
+			text-transform:initial !important;
+			font-weight:normal;
+			letter-spacing: 0;
+		}
+		h5 {
+			font-size:18px;
+			font-weight:normal;
+			letter-spacing: 0;
+		}
+	}
+}
+
+/* Package */
+.package {
+	h3 {
+		font-family:$font2;
+		text-transform: inherit;
+		text-align:center;
+		font-size:36px;
+		letter-spacing: 0;
+	}
+	.icons {
+		width:100%;
+		font-size:0;
+		li {
+			width:25%;
+			padding-right:0 !important;
+			text-align:center;
+		}
+	}
+}
+
+/* Gallery */
+.gallery {
+	font-size:0;
+	list-style-type:none;
+	li {
+		width:33.3%;
+		display:inline-block;
+		padding:0 10px;
+		a {
+			display:block;
+			border:0;
+			img {
+				width:100%;
+			}
+		}
+	}
+}
