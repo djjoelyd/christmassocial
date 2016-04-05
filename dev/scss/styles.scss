@@ -2308,3 +2308,14 @@
 		}
 	}
 }
+div.alert.alert-danger,
+div.alert.alert-success {
+	strong {
+		color:#000;
+	}
+}
+button.close {
+	height: 20px !important;
+	margin: 4px 0 0 10px;
+	box-shadow:none;
+}

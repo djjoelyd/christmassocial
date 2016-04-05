@@ -15,6 +15,7 @@ $(function() {
             // get values from FORM
             var name = $("input#name").val();
             var companyName = $("input#companyName").val();
+            var job = $("input#job").val();
             var guests = $("input#guests").val();
             var date = $("input#date").val();
             var email = $("input#email").val();
@@ -32,6 +33,7 @@ $(function() {
                 data: {
                     name: name,
                     companyName: companyName,
+                    job: job,
                     guests: guests,
                     date: date,
                     email: email,
