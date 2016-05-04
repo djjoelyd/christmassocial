@@ -109,14 +109,16 @@ module.exports = function(grunt) {
             },
 
             images: {
-                files: ['dist/images/{,*/}*.{png,jpg,gif,svg}'],
+                files: ['dev/images/{,*/}*.{png,jpg,gif,svg}'],
+                tasks: ['copy'],
                 options: {
                     livereload: true
                 }
             },
 
             js: {
-                files: ['dist/js/**/*.js'],
+                files: ['dev/js/**/*.js'],
+                tasks: ['concat'],
                 options: {
                     livereload: true
                 }
